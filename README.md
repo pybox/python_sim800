@@ -9,13 +9,16 @@ pip install pyserial
 ```python
 #initializing
 import sim800
-sim = sim800.sim(port='/dev/ttyTHS1' , baudrate=9600 , timeout=5)
+sim = sim800.sim(port='/dev/ttyTHS1', baudrate=9600, timeout=5)
 if sim.isOpen() :
   print( sim.signal_quality() )
 
-#Sending SMS
+# Sending SMS
 phone = '+ZZxxxxxxxxxx'
 text = 'Test'
-r = sim.send_sms(phone , text)
+r = sim.send_sms(phone, text)
 if r :
   print(r[0]) #prints "+CMGS: 180"
+
+# Making call
+sim.call(phone, 20) # 20 is hang up time in seconds
