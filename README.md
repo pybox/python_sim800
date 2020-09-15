@@ -21,4 +21,4 @@ if r :
   print(r[0]) #prints "+CMGS: 180"
 
 # Making call
-sim.call(phone, 20) # 20 is hang up time in seconds
+sim.call(phone, 20) # wait for 20 seconds
